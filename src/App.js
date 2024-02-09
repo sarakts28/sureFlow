@@ -1,9 +1,9 @@
-import SideMenu from "./Components/side_menu";
+import InventoryPage from "./Pages/inventory_page";
 
 function App() {
   return (
     <>
-      <SideMenu />
+      <InventoryPage />
     </>
   );
 }

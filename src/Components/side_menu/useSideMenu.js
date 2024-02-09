@@ -4,6 +4,7 @@ import { Images } from "../../Assest/Icons";
 
 export default function useSideMenu() {
   const [selectedKey, setSelectedKey] = useState("inventory");
+  const [isDrawerOpen, setIsDraweOpen] = useState(false);
 
   const menuItems = [
     {
@@ -102,9 +103,13 @@ export default function useSideMenu() {
     },
   ];
 
+  const handleDrawer = () => setIsDraweOpen(!isDrawerOpen);
+
   return {
     selectedKey,
     setSelectedKey,
     menuItems,
+    isDrawerOpen,
+    handleDrawer,
   };
 }

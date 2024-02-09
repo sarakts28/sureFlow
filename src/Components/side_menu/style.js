@@ -5,12 +5,19 @@ export const MenuContainer = styled.div`
   padding: 30px 0;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 93.5vh;
+  background-color: #ffffff;
   @media screen and (max-width: 550px) {
     display: none;
   }
 `;
 
+export const MobMenuContainer = styled.div`
+  width: 50px;
+  @media screen and (min-width: 551px) {
+    display: none;
+  }
+`;
 export const BottomMenuItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +30,10 @@ export const Heading = styled.h1`
   padding: 0px 30px;
   color: #1677ff;
   font-size: 32px;
+  @media screen and (max-width: 551px) {
+    padding: 0px 20px;
+    font-size: 28px;
+  }
 `;
 
 export const MenuContainerStyle = styled.div`
