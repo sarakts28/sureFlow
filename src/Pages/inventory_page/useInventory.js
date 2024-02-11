@@ -50,7 +50,6 @@ export default function useInventory() {
   };
 
   const onClickAddProduct = () => {
-    console.log("on click add product");
     setIsOpen(true);
   };
 

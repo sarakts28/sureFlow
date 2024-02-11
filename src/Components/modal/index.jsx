@@ -34,7 +34,6 @@ export default function AddModal({ isOpen, modalClose, setAddProduct }) {
       return errors;
     },
     onSubmit: (values) => {
-      console.log(values);
       setAddProduct(values);
     },
   });
