@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { MainContainer, NotificationContainer } from "./style";
 import { ConfigProvider, Input } from "antd";
 import { Images } from "../../Assest/Icons";
 import { SearchOutlined } from "@ant-design/icons";
 export default function Header({ onSearch, value }) {
+  const [changevalue, setValue] = useState("");
   return (
     <MainContainer>
       <ConfigProvider
@@ -21,7 +22,7 @@ export default function Header({ onSearch, value }) {
               />
             }
             placeholder="Search product, supplier, orders"
-            onPressEnter={onSearch}
+            onChange={onSearch}
             allowClear
             value={value}
           />

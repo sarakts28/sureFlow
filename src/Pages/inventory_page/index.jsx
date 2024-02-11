@@ -1,5 +1,6 @@
 import React from "react";
-import { Header, SideMenu, TableComponent } from "../../Components";
+import { AddModal, Header, TableComponent } from "../../Components";
+import { SideMenu } from "../../Components/CommonComponents";
 import { DesktopContainer, MobContainer, TableContainer } from "./style";
 import useInventory from "./useInventory";
 import OverallInventory from "./overall_inventory";
@@ -11,6 +12,10 @@ export default function InventoryPage() {
     onClickAddProduct,
     onClickDownload,
     onClickFilter,
+    data,
+    setDeleteRecord,
+    isOpen,
+    onClickModalClose,
   } = useInventory();
   return (
     <>
@@ -27,7 +32,7 @@ export default function InventoryPage() {
               onClickDownload={onClickDownload}
               onClickFilter={onClickFilter}
             />
-            <TableComponent />
+            <TableComponent data={data} setDeleteRecord={setDeleteRecord} />
           </TableContainer>
         </div>
       </DesktopContainer>
@@ -41,9 +46,12 @@ export default function InventoryPage() {
             onClickDownload={onClickDownload}
             onClickFilter={onClickFilter}
           />
-          <TableComponent />
+          <TableComponent data={data} setDeleteRecord={setDeleteRecord} />
         </TableContainer>
       </MobContainer>
+      {isOpen ? (
+        <AddModal isOpen={isOpen} modalClose={onClickModalClose} />
+      ) : null}
     </>
   );
 }

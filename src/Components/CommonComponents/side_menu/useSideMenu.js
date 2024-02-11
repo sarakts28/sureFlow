@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styles } from "./style";
-import { Images } from "../../Assest/Icons";
+import { Images } from "../../../Assest/Icons";
 
 export default function useSideMenu() {
   const [selectedKey, setSelectedKey] = useState("inventory");

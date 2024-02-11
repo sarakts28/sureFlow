@@ -5,7 +5,7 @@ import {
   ButtonContainer,
   ButtonWidth,
 } from "./style";
-import { ButtonCompoment } from "../../Components";
+import { ButtonCompoment } from "../../Components/CommonComponents";
 import { FilterFilled } from "@ant-design/icons";
 
 export default function ProductHeader({

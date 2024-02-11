@@ -1,7 +1,10 @@
 import React from "react";
 import { Table, Space } from "antd";
 
-export default function TableComponent({ data }) {
+export default function TableComponent({ data, setDeleteRecord }) {
+  const deleteValue = (record) => {
+    setDeleteRecord(record);
+  };
   const columns = [
     {
       title: "Products",
@@ -32,13 +35,18 @@ export default function TableComponent({ data }) {
       title: "Availability",
       dataIndex: "availability",
       key: "availability",
+      render: (availability) => (
+        <div style={{ color: availability === "In-stock" ? "green" : "red" }}>
+          {availability}
+        </div>
+      ),
     },
     {
       title: "Action",
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <a>Delete</a>
+          <a onClick={() => deleteValue(record)}>Delete</a>
         </Space>
       ),
     },
@@ -46,7 +54,12 @@ export default function TableComponent({ data }) {
 
   return (
     <div>
-      <Table columns={columns} dataSource={data} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        pagination={{ pageSize: 10 }}
+        scroll={{ x: 500, y: 350 }}
+      />
     </div>
   );
 }

@@ -8,6 +8,7 @@ export default function ButtonCompoment({
   label,
   height,
   onHandleButtonClick,
+  htmlType,
 }) {
   const buttonStyle = {
     ...styles.buttonStyle,
@@ -21,6 +22,7 @@ export default function ButtonCompoment({
         shape="rounded"
         style={buttonStyle}
         onClick={onHandleButtonClick}
+        htmlType={htmlType}
       >
         {label}
       </Button>
