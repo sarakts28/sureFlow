@@ -5,7 +5,6 @@ export const MenuContainer = styled.div`
   padding: 30px 0;
   display: flex;
   flex-direction: column;
-  height: 93.5vh;
   background-color: #ffffff;
   @media screen and (max-width: 550px) {
     display: none;
@@ -22,7 +21,10 @@ export const BottomMenuItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: end;
-  height: 45vh;
+  height: 30vh;
+  @media screen and (min-width: 551px) and (max-width: 950px) {
+    height: 50vh;
+  }
 `;
 
 export const Heading = styled.h1`

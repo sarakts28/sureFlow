@@ -12,8 +12,12 @@ import blueTrolley from "./blueTrolley.svg";
 import blueMangerIcon from "./blueDocuments.svg";
 import blueSuppliers from "./blueSuppliers.svg";
 import blueReport from "./blueReport.svg";
+import notificationIcon from "./notification.svg";
+import userIcon from "./avatar.svg";
 
 export const Images = {
+  userIcon: userIcon,
+  notificationIcon: notificationIcon,
   inventoryIcon: inventory,
   dashboard: dashboard,
   suppliersIcon: suppliersIcon,
