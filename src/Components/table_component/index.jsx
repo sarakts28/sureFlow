@@ -53,12 +53,12 @@ export default function TableComponent({ data, setDeleteRecord }) {
   ];
 
   return (
-    <div>
+    <div style={{ width: "auto" }}>
       <Table
         columns={columns}
         dataSource={data}
         pagination={{ pageSize: 10 }}
-        scroll={{ x: 500, y: 350 }}
+        scroll={{ x: 300, y: 350 }}
       />
     </div>
   );

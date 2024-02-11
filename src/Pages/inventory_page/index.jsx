@@ -16,6 +16,7 @@ export default function InventoryPage() {
     setDeleteRecord,
     isOpen,
     onClickModalClose,
+    setAddProduct,
   } = useInventory();
   return (
     <>
@@ -50,7 +51,11 @@ export default function InventoryPage() {
         </TableContainer>
       </MobContainer>
       {isOpen ? (
-        <AddModal isOpen={isOpen} modalClose={onClickModalClose} />
+        <AddModal
+          isOpen={isOpen}
+          modalClose={onClickModalClose}
+          setAddProduct={setAddProduct}
+        />
       ) : null}
     </>
   );

@@ -68,7 +68,7 @@ export const OI_FirstContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 900px) {
-    heigth: auto;
+    height: auto;
     width: auto;
     border-right: none;
     margin-bottom: 20px;
@@ -86,7 +86,7 @@ export const OI_SecondContainer = styled.div`
   flex-direction: column;
   padding: 0px 30px;
   @media screen and (max-width: 900px) {
-    heigth: auto;
+    height: auto;
     width: auto;
     border-right: none;
     margin-bottom: 20px;
@@ -103,7 +103,7 @@ export const OI_LastContainer = styled.div`
   flex-direction: column;
   padding: 0px 30px;
   @media screen and (max-width: 900px) {
-    heigth: auto;
+    height: auto;
     width: auto;
     border-right: none;
     margin-bottom: 20px;

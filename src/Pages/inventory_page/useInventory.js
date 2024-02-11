@@ -8,6 +8,7 @@ export default function useInventory() {
   const [tableData, setTableData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [addProduct, setAddProduct] = useState(null);
 
   const productName = [
     "Bru",
@@ -79,7 +80,7 @@ export default function useInventory() {
     let dataArray = productName.map((product, index) => {
       const buyPrice = `$ ${Math.floor(Math.random() * 50)}`;
       const quantity = `Packets ${Math.floor(Math.random() * 100)}`;
-      const tValue = `Packets ${Math.floor(Math.random() * 30)}`;
+      const tValue = `Packets ${Math.floor(Math.random() * 10)}`;
       const eDate = new Date(
         Date.UTC(
           2024,
@@ -87,7 +88,8 @@ export default function useInventory() {
           Math.floor(Math.random() * 28) + 1
         )
       );
-      const availability = Math.random() < 0.5 ? "In-stock" : "Out of Stock";
+      const availability =
+        `${Math.floor(Math.random() * 10)}` > 4 ? "In-stock" : "Out of Stock";
 
       return {
         key: index,
@@ -110,6 +112,26 @@ export default function useInventory() {
     setTableData(filterData);
   };
 
+  const addProductTable = () => {
+    const obj = {
+      key: addProduct.productId,
+      products: addProduct.productName,
+      buyPrice: `$ ${addProduct.buying}`,
+      quantity: `Packets ${addProduct.quantity}`,
+      tValue: `Packets ${addProduct.thresholdValue}`,
+      eDate: addProduct.expiryDate,
+      availability:
+        addProduct.thresholdValue < 0.5 ? "In-stock" : "Out of Stock",
+    };
+
+    setTableData([...tableData, obj]);
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (addProduct !== null) addProductTable();
+  }, [addProduct]);
+
   useEffect(() => {
     if (deleteRecord !== null) {
       deleteProduct();
@@ -130,5 +152,6 @@ export default function useInventory() {
     setDeleteRecord,
     isOpen,
     onClickModalClose,
+    setAddProduct,
   };
 }
