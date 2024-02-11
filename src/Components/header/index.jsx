@@ -13,7 +13,7 @@ export default function Header({ onSearch, value }) {
           },
         }}
       >
-        <div style={{ width: "22%" }}>
+        <div>
           <Input
             prefix={
               <SearchOutlined

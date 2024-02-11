@@ -7,5 +7,22 @@ export default function useInventory() {
     setSearchValue(event.target.value);
   };
 
-  return { searchValue, onSearch };
+  const onClickAddProduct = () => {
+    console.log("on click add product");
+  };
+
+  const onClickDownload = () => {
+    console.log("on click Download");
+  };
+  const onClickFilter = () => {
+    console.log("on click filter");
+  };
+
+  return {
+    searchValue,
+    onSearch,
+    onClickAddProduct,
+    onClickDownload,
+    onClickFilter,
+  };
 }

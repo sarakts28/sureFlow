@@ -1,13 +1,10 @@
 import { Button } from "antd";
 import React from "react";
-import { Images } from "../../Assest/Icons";
 import { styles } from "./style";
 
 export default function ButtonCompoment({
   type = "primary",
-  icon = (
-    <img src={Images.blueDashboard} width={20} height={20} alt="no image" />
-  ),
+  icon,
   label,
   height,
   onHandleButtonClick,
